@@ -3,13 +3,13 @@ const path = require("path");
 const bodyParser = require("body-parser");
 const app = express();
 
-const config = require("C:/Users/kosta/chatbot-app/server/config/keys");
+const config = require("C:/Users/kosta/ICT_Coc_AI_contest/server/config/keys");
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 
-app.use('/api/dialogflow', require('C:/Users/kosta/chatbot-app/server/routes/dialogflow'));
+app.use('/api/dialogflow', require('C:/Users/kosta/ICT_Coc_AI_contest/server/routes/dialogflow'));
 
 // Serve static assets if in production
 if (process.env.NODE_ENV === "production") {

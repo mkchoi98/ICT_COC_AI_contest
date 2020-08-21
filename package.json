@@ -21,6 +21,7 @@
     "dialogflow": "^0.8.2",
     "dialogflow-fulfillment": "^0.6.1",
     "express": "^4.17.1",
+    "heroku": "^7.42.8",
     "mongoose": "^5.4.20",
     "mysql": "^2.18.1",
     "react-native": "^0.63.2",
