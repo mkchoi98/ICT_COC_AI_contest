@@ -3,7 +3,8 @@ const path = require("path");
 const bodyParser = require("body-parser");
 const app = express();
 
-const config = require("C:/Users/kosta/ICT_Coc_AI_contest/server/config/keys");
+//const config = require("C:/Users/kosta/ICT_Coc_AI_contest/server/config/keys.js");
+const config = require("./server/config/keys.js");
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
