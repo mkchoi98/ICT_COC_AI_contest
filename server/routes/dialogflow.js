@@ -29,13 +29,6 @@ var date;
 var thing;
 var cate;
 
-var id= "";
-var take_place= "";
-var get_date= "";
-var get_name= "";
-var get_area= "";
-var get_position= "";
-
 // We will make two routes 
 router.post('/textQuery', async (req,res) => {
   // The text query request.
@@ -90,28 +83,43 @@ router.post('/textQuery', async (req,res) => {
 
   //compare to database
   else if(str.indexOf('걱정')!= -1 || str.indexOf('info')!= -1 || str.indexOf('card')!= -1){
-    connection.query(`SELECT * from things WHERE get_date = ${date*1} AND cate = '${cate}' AND get_name like '%${thing}%'`, (error, rows, fields) => {
+    connection.query(`SELECT * from things WHERE get_date = ${date*1} AND cate = '${cate}' AND (get_name like '%${thing}%' OR get_name like '%${cate}%')`, (error, rows, fields) => {
         
         if (error) throw error;
 
         result.fulfillmentText
 
-        id={rows}['rows'][0].id
-        take_place={rows}['rows'][0].take_place
-        get_date={rows}['rows'][0].get_date
-        get_name={rows}['rows'][0].get_name
-        get_area={rows}['rows'][0].get_area
-        get_position={rows}['rows'][0].get_position
+        // console.log({rows}['rows'])
 
-        info='things,'+id.toString()+','+take_place+','+get_date+','+get_name+','+get_area+','+get_position
+        if({rows}['rows'][0]==null){
+          info='안타깝게도 접수된 분실물이 없습니다.'
 
-        console.log(`  Response: ${result.fulfillmentText}`);
-        result.fulfillmentMessages[1].text.text=info
+          console.log(`  Response: ${result.fulfillmentText}`);
+          result.fulfillmentMessages[1].text.text=info
 
-        console.log(result.fulfillmentMessages[1].text.text);
+          console.log(result.fulfillmentMessages[1].text.text);
         
-        result.fulfillmentMessages[2].text.text='회사정보 : '+get_position
-        console.log(result.fulfillmentMessages[2].text.text)
+          result.fulfillmentMessages[2].text.text='또 잃어버리신 물건은 없으신가요?'
+          console.log(result.fulfillmentMessages[2].text.text)
+        }
+        else{
+          id={rows}['rows'][0].id
+          take_place={rows}['rows'][0].take_place
+          get_date={rows}['rows'][0].get_date
+          get_name={rows}['rows'][0].get_name
+          get_area={rows}['rows'][0].get_area
+          get_position={rows}['rows'][0].get_position
+
+          info='things,'+id.toString()+','+take_place+','+get_date+','+get_name+','+get_area+','+get_position
+
+          console.log(`  Response: ${result.fulfillmentText}`);
+          result.fulfillmentMessages[1].text.text=info
+
+          console.log(result.fulfillmentMessages[1].text.text);
+        
+          result.fulfillmentMessages[2].text.text='회사정보 : '+get_position
+          console.log(result.fulfillmentMessages[2].text.text)
+        }
 
         res.send(result)
 
