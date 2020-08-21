@@ -10,7 +10,6 @@
 - [Project Introduction](#Project-Introduction)
 - [Project Development Environment and Language](#Project-Development-Environment-and-Language)
 - [Execution Screen](#Execution-Screen)
-- [How to run](#How-to-run)
 - [Bugs and Feature Requests](#Bugs-and-Feature-Requests)
 - [About the Contributor](#About-the-Contributor)
 
@@ -32,11 +31,6 @@
 - Server : Express.js
 - Network : Node.js
 - Front : React.js
-
-
-## How to run
-
-- Clone the repo: `https://github.com/alsrud9909/ICT_Coc_AI_contest.git`
 
 
 ## Bugs and Feature Requests
