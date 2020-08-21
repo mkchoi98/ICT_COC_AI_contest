@@ -27,7 +27,7 @@
 
 
 ## Project Development Environment and Language
-- Wondows10
+- Windows10
 - DB : MySQL
 - Server : Express.js
 - Network : Node.js
