@@ -187,8 +187,8 @@ function Chatbot(props) {
 
 
     return (
-        <div style={{  height: 580, width: 344, borderRadius: '7px'}}>
-            <div style={{ height: 550, width: '100%', overflow: 'auto' , backgroundColor: 'rgba(0,0,0,0.1)'}}>
+        <div style={{  height: 620, width: 344, borderRadius: '7px'}}>
+            <div style={{ height: 590, width: '100%', overflow: 'auto' , backgroundColor: 'rgba(0,0,0,0.1)'}}>
                 
                 {renderMessages(messagesFromRedux)}
 
