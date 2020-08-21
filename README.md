@@ -1,15 +1,22 @@
-# ICT_Coc_AI_contest
+<p align="center">
+    <img src="https://user-images.githubusercontent.com/59993071/90844507-0320ae00-e39f-11ea-9b58-1382a0949acd.png" alt="구해줘띵즈 logo" width="200" height="200">
+</p>
 
-2020 ICT Coc 콕 AI 공모전
+<h3 align="center">구해줘 띵즈</h3>
 
-구해줘 띵즈 Team
+<p align="center">
+  2020 ICT Coc 콕 AI 공모전
+</p>
+   
+    
+* * *
 
 
 ## Table of Contents
 
 - [Project Introduction](#Project-Introduction)
 - [Project Development Environment and Language](#Project-Development-Environment-and-Language)
-- [Execution Screen](#Execution-Screen)
+- [Demo](#Demo)
 - [Bugs and Feature Requests](#Bugs-and-Feature-Requests)
 - [About the Contributor](#About-the-Contributor)
 
@@ -33,6 +40,9 @@
 - Front : React.js
 
 
+## Demo
+
+
 ## Bugs and Feature Requests
 
 [**Please do requests here.**](https://github.com/alsrud9909/ICT_Coc_AI_contest/issues)
@@ -51,3 +61,6 @@
 **Yu SiEun**
 - [**@momoziri**](https://github.com/momoziri)
 - <dbtldm@ajou.ac.kr>
+
+
+* * *
