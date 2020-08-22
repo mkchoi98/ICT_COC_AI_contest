@@ -25,9 +25,7 @@
     "heroku": "^7.42.8",
     "mongoose": "^5.4.20",
     "mysql": "^2.18.1",
-    "react-native": "^0.63.2",
-    "react-native-keyboard-accessory": "^0.1.12",
-    "react-scroll-to-bottom": "^3.0.0"
+    "react-native": "^0.63.2"
   },
   "devDependencies": {
     "concurrently": "^5.3.0",

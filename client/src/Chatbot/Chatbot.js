@@ -1,12 +1,10 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
 import { saveMessage } from '../_actions/message_actions';
 import Message from './Sections/Message';
 import { List, Icon, Avatar } from 'antd';
 import Card from "./Sections/Card";
-import { KeyboardAccessoryView } from 'react-native-keyboard-accessory'
-import { View, Text } from 'react-native';
 
 function Chatbot(props) {
 
@@ -107,6 +105,7 @@ function Chatbot(props) {
 
 
     const keyPressHandler = (e) => {
+
         if (e.key === "Enter") {
 
             if (!e.target.value) {
@@ -121,6 +120,26 @@ function Chatbot(props) {
         }
 
     }
+
+    const handleClick = (e) => {
+        if (e) 
+        {
+
+            if (e.target.value) {
+                return alert('you need to type somthing first')
+            }
+            
+            e.target.value = "ge";
+
+            textQuery(e.target.value)
+
+
+            e.target.value = "";   
+            
+            
+        }
+        
+      }
 
     
     const renderCards = (cards) => {
@@ -189,26 +208,35 @@ function Chatbot(props) {
         }
     });
 
-
     return (
-        <div style={{  height: 620, width: 344, borderRadius: '7px'}}>
-            <div style={{ height: 590, width: '100%', overflow: 'auto' , backgroundColor: 'rgba(0,0,0,0.1)'}}>
-                
-                {renderMessages(messagesFromRedux)}
+            <div style={{ height: 620, width: 344, borderRadius: '7px' }}>
+                <div style={{ height: 590, width: '100%', overflow: 'auto', backgroundColor: 'rgba(0,0,0,0.1)' }}>
 
-                <div ref={messageEndRef} />
-            </div>
+                    {renderMessages(messagesFromRedux)}
 
-            <input style={{
-                    margin: 0, width: '100%', height: 50, border: '0px',
+                    <div ref={messageEndRef} />
+                </div>
+
+                <input style={{
+                    margin: 0, width: '79%', height: 50, border: '0px',
                     borderRadius: '2px', padding: '5px', fontSize: '1rem', backgroundColor: 'rgba(0,0,0,0.05)'
                 }}
-                placeholder="메세지를 입력하세요 ..."
-                onKeyPress={keyPressHandler}
-                type="text" />
+                    placeholder="메세지를 입력하세요 ..."
+                    onKeyPress={keyPressHandler}
+                    type="text" />
+                
+                <a href="#"
+                    type="text"
+                    style={{
+                        margin:'0px 0px 0px 3px', border: '0px', borderRadius: '1px',
+                        padding: '14px 18.1px 14px 18.7px', fontSize: '1rem', backgroundColor: 'rgba(0,0,0,0.05)'
+                    }}
+                    onClick={handleClick}
+                    >
+                        전송
+                </a>
 
-        </div>
-
+            </div>
     )
 }
 
