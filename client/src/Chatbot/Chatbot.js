@@ -5,6 +5,8 @@ import { saveMessage } from '../_actions/message_actions';
 import Message from './Sections/Message';
 import { List, Icon, Avatar } from 'antd';
 import Card from "./Sections/Card";
+import { KeyboardAccessoryView } from 'react-native-keyboard-accessory'
+import { View, Text } from 'react-native';
 
 function Chatbot(props) {
 
@@ -115,10 +117,12 @@ function Chatbot(props) {
             textQuery(e.target.value)
 
 
-            e.target.value = "";
+            e.target.value = "";   
         }
+
     }
 
+    
     const renderCards = (cards) => {
         return cards.map((card,i) => <Card key={i} cardInfo={card.structValue} />)
     }
