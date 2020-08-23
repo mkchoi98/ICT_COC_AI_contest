@@ -44,6 +44,7 @@
 
 ![Alt Text](https://user-images.githubusercontent.com/69449727/90902920-2d5a8600-e408-11ea-985b-ba5938ba0ac6.gif)
 
+
 ## Bugs and Feature Requests
 
 [**Please do requests here.**](https://github.com/alsrud9909/ICT_Coc_AI_contest/issues)

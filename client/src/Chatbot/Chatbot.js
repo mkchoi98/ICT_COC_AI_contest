@@ -105,8 +105,9 @@ function Chatbot(props) {
 
 
     const keyPressHandler = (e) => {
-
+        
         if (e.key === "Enter") {
+            console.log(e.target.value)
 
             if (!e.target.value) {
                 return alert('you need to type somthing first')
@@ -121,25 +122,6 @@ function Chatbot(props) {
 
     }
 
-    const handleClick = (e) => {
-        if (e) 
-        {
-
-            if (e.target.value) {
-                return alert('you need to type somthing first')
-            }
-            
-            e.target.value = "ge";
-
-            textQuery(e.target.value)
-
-
-            e.target.value = "";   
-            
-            
-        }
-        
-      }
 
     
     const renderCards = (cards) => {
@@ -218,23 +200,13 @@ function Chatbot(props) {
                 </div>
 
                 <input style={{
-                    margin: 0, width: '79%', height: 50, border: '0px',
+                    margin: 0, width: '100%', height: 50, border: '0px',
                     borderRadius: '2px', padding: '5px', fontSize: '1rem', backgroundColor: 'rgba(0,0,0,0.05)'
                 }}
                     placeholder="메세지를 입력하세요 ..."
                     onKeyPress={keyPressHandler}
                     type="text" />
                 
-                <a href="#"
-                    type="text"
-                    style={{
-                        margin:'0px 0px 0px 3px', border: '0px', borderRadius: '1px',
-                        padding: '14px 18.1px 14px 18.7px', fontSize: '1rem', backgroundColor: 'rgba(0,0,0,0.05)'
-                    }}
-                    onClick={handleClick}
-                    >
-                        전송
-                </a>
 
             </div>
     )
